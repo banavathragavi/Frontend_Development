@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenovo Landing Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgb(152, 218, 218);
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner {
+            height: 450px;
+            background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .banner-content h1 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .banner-content p {
+            font-size: 22px;
+            margin: 15px 0;
+        }
+
+        .nav1 {
+            background-color: rgb(118, 229, 225);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav1 img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            margin-right: 30px;
+        }
+
+        .nav1 a {
+            color: chocolate;
+            padding: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.5s;
+        }
+
+        .nav1 a:hover {
+            color: blue;
+        }
+
+        .div1 h1 {
+            text-align: center;
+            padding-top: 20px;
+            font-family: sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: rgb(6, 53, 53);
+        }
+
+        .div1 p {
+            text-align: center;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .div2 p {
+            text-align: center;
+            padding: 0 30px;
+            font-size: 17px;
+        }
+
+        .explore-btn {
+            height: 50px;
+            width: 150px;
+            border-radius: 10px;
+            background-color: rgb(67, 163, 195);
+            border: none;
+            transition: background-color 0.5s;
+        }
+
+        .explore-btn:hover {
+            background-color: rgb(150, 218, 231);
+        }
+
+        .explore-btn a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card {
+            background-color: #d7c5c5;
+            border: 2px solid blueviolet;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .feedback-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .feedback {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid blueviolet;
+            border-radius: 12px;
+            background-color: #d7c5c5;
+            font-size: 18px;
+            font-weight: 500;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            background-color: rgb(118, 229, 225);
+            padding: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav1">
+        <img src="https://img.magnific.com/premium-vector/eqh-logo-design-initial-letter-eqh-monogram-logo-using-hexagon-shape_1101554-16445.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Logo">
+
+        <a href="#">Home</a>
+        <a href="course.html">Course</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <hr>
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Lenovo Learning Platform</h1>
+            <p>Empowering Students with Technology & Innovation</p>
+
+        </div>
+    </div>
+
+    <div class="div1">
+        <h1>Welcome to Lenovo...!</h1>
+        <p>"Smarter Technology for All."</p>
+    </div>
+
+    <div class="div2">
+        <p>
+            Lenovo is a global technology powerhouse and the world's largest PC maker,
+            with over $80 billion in annual revenue. Headquartered in Beijing, China,
+            and North Carolina, USA, it operates in 180 markets worldwide.
+        </p>
+
+        <center>
+            <button class="explore-btn">
+                <a href="pratic.html">Explore</a>
+            </button>
+        </center>
+
+        <br>
+
+        <hr>
+        <div class="feedback-section">
+            <h3>Feedback</h3>
+            <div class="feedback">
+                ⭐⭐⭐⭐⭐ <br><br>
+                Highly Recommended! The courses are well-structured,
+                easy to understand, and provide excellent learning resources.
+            </div><br>
+
+            <div class="feedback">
+                ⭐⭐⭐⭐⭐ <br><br>
+                Highly Recommended! The courses are well-structured,
+                easy to understand, and provide excellent learning resources.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Lenovo Learning Platform | All Rights Reserved
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
