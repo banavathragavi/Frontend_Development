@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "abcd",
+    "gender": "female"
+  },
+  {
+    "id": 2,
+    "name": "pqrs",
+    "gender": "male"
+  },
+  {
+    "id": 3
+  },
+  {
+    "id": 4,
+    "name": "fghj",
+    "gmail": "fgh@gmail.com"
+  },
+  {
+    "id": 5,
+    "name": "fghj",
+    "gmail": "fgh@gmail.com"
+  },
+  {
+    "id": 6,
+    "name": "sdfghj",
+    "gmail": "kjhgfghj@gmail.com"
+  }
+]
