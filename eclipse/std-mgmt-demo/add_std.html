@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .card{
+        width: 300px;
+        border: 2px solid black;
+        border-radius:3px;
+        margin:100px auto;
+        padding:30px;
+        box-shadow: 0 4px 8px gray;
+     }
+      body {
+        background-color: white;
+    }
+
+    nav {
+        padding-top: 20px;
+        background-color: black;
+        padding: 15px 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+     <div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="add_std.html">Add Student</a>
+            <a href="view_std.html">View Student</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+    <div class="card">
+     <form id="studentform">
+        <label for="username">Enter StudentName</label>
+        <input type="text" id="username" placeholder="Enter your Name">
+        <br><br>
+             <label for="rollno">Enter RollNumber</label>
+        <input type="text" id="rollno" placeholder="Enter password">
+        <br><br>
+        <label for="cgpa">Enter CGPA</label>
+        <input type="number" id="cgpa" placeholder="Enter CGPA">
+        <br><br>
+        <div class="b">
+        <button style="text-align:center;">Submit</button></div>
+    </form>
+<script>
+
+let editIndex = localStorage.getItem("editIndex");
+
+if(editIndex !== null){
+
+    let students =
+    JSON.parse(localStorage.getItem("students")) || [];
+
+    let student = students[editIndex];
+
+    document.getElementById("username").value =
+    student.username;
+
+    document.getElementById("rollno").value =
+    student.rollno;
+
+    document.getElementById("cgpa").value =
+    student.cgpa;
+}
+
+document.getElementById("studentform")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let username =
+    document.getElementById("username").value;
+
+    let rollno =
+    document.getElementById("rollno").value;
+
+    let cgpa =
+    document.getElementById("cgpa").value;
+
+    let students =
+    JSON.parse(localStorage.getItem("students")) || [];
+
+    let editIndex =
+    localStorage.getItem("editIndex");
+
+    if(editIndex !== null){
+
+        students[editIndex] = {
+            username,
+            rollno,
+            cgpa
+        };
+
+        localStorage.removeItem("editIndex");
+
+    }else{
+
+        students.push({
+            username,
+            rollno,
+            cgpa
+        });
+    }
+
+    localStorage.setItem(
+        "students",
+        JSON.stringify(students)
+    );
+
+    window.location.href =
+    "viewstudent.html";
+});
+
+</script>
+    </div>
+</body>
+</html>

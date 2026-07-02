@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Students</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<style>
+    body {
+        background-color: white;
+    }
+
+    nav {
+        padding-top: 20px;
+        background-color: black;
+        padding: 15px 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        border: 2px solid black;
+    }
+
+    th {
+        background-color: black;
+        color: white;
+        padding: 12px;
+        border: 1px solid black;
+    }
+
+    td {
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        margin: 2px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+    <div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="add_std.html">Add Student</a>
+            <a href="view_std.html">View Student</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+    <br><br>
+    <center>
+        <table>
+            <thead style="background-color: white">
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Branch</th>
+                    <th>CGPA</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tdata"></tbody>
+        </table>
+    </center>
+    <script>
+        async function getData() {
+            try {
+                let response = await fetch("http://localhost:8080/students");
+                let students = await response.json(); // Parse JSON
+                let tbody = document.getElementById("tdata");
+
+                students.forEach((student, index) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+          <td>${student.name}</td>
+          <td>${student.rollno}</td>
+          <td>${student.branch}</td>
+          <td>${student.cgpa}</td>
+          <td>
+            <button onclick="editStu(${index})">Edit</button>
+            <button onclick="deleteStu(${index})">Delete</button>
+          </td>
+        `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error fetching students:", error);
+            }
+        }
+
+        async function editStu(index) {
+            let res = await fetch("http://localhost:3000/students", {
+                method: "post",
+                headers: {
+                    "Context-Type": "application/json"
+                },
+                body: index,
+            });
+
+        }
+        async function deleteStu(index) {
+            let res = await fetch("http://localhost:8080/students");
+            let students = res.json();
+            students.splice(index, 1);
+
+        }
+        //using local storage
+
+        //   function editStu(index) {
+        //     localStorage.setItem("editStudent", index);
+        //     window.location.href = "edit-student.html";
+        //   }
+
+        //   function deleteStu(index) {
+        //     let students = JSON.parse(localStorage.getItem("students")) || [];
+        //     students.splice(index, 1);
+        //     localStorage.setItem("students", JSON.stringify(students));
+        //     location.reload();
+        //   }
+
+        getData();
+    </script>
+</body>
+
+</html>

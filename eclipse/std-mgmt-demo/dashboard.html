@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        nav {
+            padding-top:20px;
+            background-color: black;
+            padding: 15px 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .dashboard-card {
+            max-width: 500px;
+            margin: 80px auto;
+            border: 2px solid black;
+            border-radius: 15px;
+        }
+
+        .card-header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .btn-theme {
+            background-color: black;
+            color: white;
+            width: 100%;
+            margin-top: 10px;
+            border: none;
+        }
+
+        .btn-theme:hover,
+        .btn-theme:focus,
+        .btn-theme:active {
+            background-color: black !important;
+            color: white !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add_std.html">Add_student</a>
+        <a href="view_std.html">View_student</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <div class="card dashboard-card">
+
+            
+
+            <div class="card-body text-center">
+
+                <h4>Welcome to Student Management System</h4>
+                <p>Manage student records easily.</p>
+
+                <a href="add_std.html" class="btn btn-theme">
+                    Add Student
+                </a>
+
+                <a href="view_std.html" class="btn btn-theme">
+                    View Students
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
